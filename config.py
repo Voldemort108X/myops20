@@ -1,0 +1,9 @@
+LV_BP = 500 # left ventricular (LV) blood pool 
+RV_BP = 600 # right ventricular blood pool
+LV_NM = 200 # LV normal myocardium
+LV_ME = 1220 # LV myocardial edema 
+LV_MS = 2221 # LV myocardial scars
+class_values = [LV_BP,RV_BP,LV_NM,LV_ME,LV_MS]
+class_values_mrcnn_dict = {'BG':0,'LV_ME':LV_ME,'LV_MS':LV_MS}
+class_names = ['LV_BP','RV_BP','LV_NM','LV_ME','LV_MS']
+num_classes = len(class_values)
