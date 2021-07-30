@@ -235,19 +235,14 @@ def func_saveTrainingDataIntoSlices(destPath, train_inputs, train_labels, mode):
         np.save(os.path.join(destPath_label, str(i+1)+'.npy'), train_labels[i])
 
 def func_createLabelToMask(label,myo_type):
-    
-    #print(type(label))
-    #print(label.shape)
     size_x,size_y = label.shape
     mask = np.zeros(shape=(size_x,size_y))
 
-        #indices = [(row,col.index(class_values[i])) for row, col in enumerate(list(label)) if class_values[i] in row]
     if myo_type == 'LV_MS' or myo_type == 'BG':
         indices = np.where(label==class_values_mrcnn_dict[myo_type])
         x = indices[0]
         y = indices[1]
         for j in range(indices[0].shape[0]):
-                #print(x[j],y[j])
             mask[(x[j],y[j])] = 1
         
         return mask
@@ -255,9 +250,6 @@ def func_createLabelToMask(label,myo_type):
     if myo_type == 'LV_ME':
         indices = np.where(label==class_values_mrcnn_dict[myo_type])
         indices_LVMS = np.where(label==LV_MS)
-        #print(type(indices[1]))
-        #print(len(indices))
-        #print(indices[0].shape)
         x = indices[0]
         y = indices[1]
         for j in range(indices[0].shape[0]):
