@@ -1,5 +1,5 @@
 # MyoPS 2020: Fully Automated Deep Learning-based Segmentation of Normal, Infarcted and Edema Regions from Multiple Cardiac MRI Sequences
-## [[Paper]](https://link.springer.com/chapter/10.1007/978-3-030-65651-5_8) [[Challenge website]](https://zmiclab.github.io/projects/myops20/)
+## [[Paper]](https://link.springer.com/chapter/10.1007/978-3-030-65651-5_8) [[Challenge website]](http://www.sdspeople.fudan.edu.cn/zhuangxiahai/0/myops20/index.html)
 
 ## Overview
 ![Alt](asset/MyoPS20.png "Overiew")
@@ -16,7 +16,7 @@
 }
 ```
 ## Dataset
-Please refer to challenge website [[link]](https://zmiclab.github.io/projects/myops20/) for dataset access. The dataset contains three folders: train25, train25_myops_gd, test20.
+Please refer to challenge website [[link]](http://www.sdspeople.fudan.edu.cn/zhuangxiahai/0/myops20/index.html) for dataset access. The dataset contains three folders: train25, train25_myops_gd, test20.
 
 ## Environment
 1. UNet: 
