@@ -73,7 +73,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--datapath', default=os.path.join(os.getcwd(),'Data','Original_data'), help='Test data path for UNet')
     parser.add_argument('--datadest', default=os.path.join(os.getcwd(),'Prediction', 'UNet'), help='Prediction path for UNet')
-    parser.add_argument('--modelpath', default=os.path.join(os.getcwd(), 'Models', 'Model_UNet', help='Model path for UNet'))
+    parser.add_argument('--modelpath', default=os.path.join(os.getcwd(), 'Models', 'Model_UNet'), help='Model path for UNet')
     parser.add_argument('--moduleIndexList', default=[0, 1, 2, 3, 4], help='model list for testing, 0: LV_BP, 1:RV_BP, 2:LV_NM, 3:LV_ME, 4:LV_MS')
     parser.add_argument('--bs', default=8, type=int, help='batch size for UNet testing model')
     parser.add_argument('--ps', default=256, type=int, help='patch size for UNet testing model')
@@ -81,6 +81,8 @@ if __name__ == "__main__":
     parser.add_argument('--vs', default=0.8, help='validation split for UNet testing model')
     parser.add_argument('--lr', default=1e-5, help='learning rate for UNet testing model')
     args = parser.parse_args()
+
+    test(args.datapath, args.datadest, args.modelpath, args.moduleIndexList, args.bs, args.ps, args.epoch, args.vs, args.lr)
 
     # jupyternotebook debug
     # test(os.path.join(os.getcwd(),'Data','Original_data'), os.path.join(os.getcwd(),'Prediction', 'UNet'), os.path.join(os.getcwd(),'Models','Model_UNet'), [0,1,2,3,4], 8, 256, 5, 0.8, 1e-5)

@@ -62,7 +62,7 @@ def train(mode, datapath, modeldir, num_epoch, patch_size, validation_split, lea
     NEPOCHS = num_epoch
 
     moduleIndex = 3 if mode == 'LV_ME' else 4
-    train_inputs, train_labels = func_loadTrainingData_mrcnn(os.path.join(os.getcwd(), 'Data', 'Augmented_data','train_25_reduced'), patch_size, moduleIndex)
+    train_inputs, train_labels = func_loadTrainingData_mrcnn(os.path.join(os.getcwd(), 'Data', 'Augmented_data','train_25'), patch_size, moduleIndex)
     destPath = os.path.join(os.path.join(os.getcwd(), 'Data', 'Augmented_data', 'maskrcnn'))
     func_saveTrainingDataIntoSlices(destPath, train_inputs, train_labels, mode)
 
@@ -122,7 +122,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     print('Training configuration:',args)
-    train(args.datapath, args.ps, args.mode)
+    train(args.mode, args.datapath, args.modeldir, args.epoch, args.ps, args.vs, args.lr)
 
     # jupyternotebook debug
     # train('LV_MS', os.path.join(os.getcwd(), 'Data', 'Augmented_data', 'maskrcnn'), os.path.join(os.getcwd(), 'Models', 'Model_MaskRCNN'), 5, 256, 0.8, 0.001)

@@ -44,7 +44,7 @@ def train(dataPath, batch_size, patch_size, num_epoch, save_frequency, validatio
         print(model.summary())
         model.compile(optimizer=Adam(lr=learning_rate), loss=dice_coef_loss, metrics=[dice_coef])
 
-        model_root = os.path.join(os.getcwd(), 'Model', 'Model_UNetPP')
+        model_root = os.path.join(os.getcwd(), 'Models', 'Model_UNetPP')
         history_root = os.path.join(os.getcwd(), 'History_UNetPP')
         model_name = f"model_UNetPP_{class_names[i]}_bs_{batch_size}_ps_{patch_size}_epoch_{num_epoch}_valid_split_{validation_split}_lr_{learning_rate}"
         model_dir = os.path.join(model_root, model_name)

@@ -102,7 +102,7 @@ def func_applyElasticTransformParallel(img,transmap):
     :return: deformed image with size [img_size,img_size,num_channels] with the same deformation for all channels
     """
     num_channels = img.shape[2]
-    print('debug: num_channels', num_channels)
+    # print('debug: num_channels', num_channels)
     img_final = np.zeros(img.shape, dtype=np.int16)
 
     # plt.imshow(img[:,:,0])
